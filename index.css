@@ -1,0 +1,224 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  padding: 24px;
+}
+
+/* ── Layout ── */
+.app {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+/* Left: menu board */
+.menu-panel {
+  width: 380px;
+  flex-shrink: 0;
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: sticky;
+  top: 24px;
+  min-height: 400px;
+}
+
+.menu-panel h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #f5e642;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #444;
+  padding-bottom: 8px;
+}
+
+#menuDisplay {
+  font-family: 'Courier New', monospace;
+  font-size: 11.5px;
+  white-space: pre;
+  overflow-x: auto;
+  color: #f5e642;
+  line-height: 1.5;
+}
+
+/* Center: avatar + controls */
+.center-panel {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+/* Right: order receipt */
+.order-panel {
+  width: 340px;
+  flex-shrink: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: sticky;
+  top: 24px;
+  min-height: 400px;
+}
+
+.order-panel h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2e7d32;
+  border-bottom: 2px solid #e8f5e9;
+  padding-bottom: 8px;
+}
+
+#orderDisplay {
+  font-family: 'Courier New', monospace;
+  font-size: 11.5px;
+  white-space: pre;
+  overflow-x: hidden;
+  color: #333;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.brand {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2e7d32;
+}
+
+/* ── Controls ── */
+.actionRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.actionRow label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.btn-group {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+button {
+  display: inline-block;
+  padding: 0 16px;
+  border-radius: 8px;
+  height: 40px;
+  background-color: #4caf50;
+  border: none;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+}
+
+button:hover {
+  background-color: #388e3c;
+}
+
+.primary-btn { background-color: #1976d2; }
+.primary-btn:hover { background-color: #1565c0; }
+
+.danger-btn { background-color: #e53935; }
+.danger-btn:hover { background-color: #b71c1c; }
+.danger-btn:disabled { background-color: #bdbdbd; cursor: not-allowed; }
+
+button:disabled { background-color: #bdbdbd; cursor: not-allowed; }
+
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  background: #e0e0e0;
+  color: #555;
+}
+
+input[type='text'] {
+  height: 40px;
+  padding: 0 12px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+#taskInput {
+  width: 260px;
+}
+
+/* ── Status log ── */
+#status {
+  overflow: auto;
+  background-color: #fff;
+  height: 110px;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* ── Video ── */
+.videoWrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #111;
+  border-radius: 10px;
+  overflow: hidden;
+  min-height: 300px;
+}
+
+.videoEle {
+  width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+}
+
+.avatar-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-size: 15px;
+}
+
+/* ── Clear button ── */
+.clear-btn {
+  background-color: #e53935;
+  font-size: 14px;
+  height: 36px;
+}
+
+.clear-btn:hover { background-color: #b71c1c; }
+
+/* ── Visibility helpers ── */
+.hide { display: none !important; }
+.show { display: flex; }

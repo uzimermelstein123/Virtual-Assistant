@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+  <head>
+    <title>OrderBuddy</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="icon" href="./favicon.ico" />
+    <!-- LiveKit browser SDK (UMD build — exposes window.LivekitClient) -->
+    <script src="https://cdn.jsdelivr.net/npm/livekit-client@2/dist/livekit-client.umd.min.js"></script>
+  </head>
+
+  <body>
+    <div class="app">
+      <!-- Left: menu board -->
+      <div class="menu-panel">
+        <h2>Menu</h2>
+        <pre id="menuDisplay">Loading menu…</pre>
+      </div>
+
+      <!-- Center: avatar + controls -->
+      <div class="center-panel">
+        <h1 class="brand">OrderBuddy</h1>
+
+        <div class="actionRow">
+          <button id="connectBtn" class="primary-btn">Connect</button>
+          <button id="disconnectBtn" class="danger-btn" disabled>Disconnect</button>
+          <span id="connectionStatus" class="status-badge">Disconnected</span>
+        </div>
+
+        <div class="videoWrap">
+          <video id="mediaElement" class="videoEle" autoplay playsinline></video>
+          <div id="avatarPlaceholder" class="avatar-placeholder">
+            <p>Connect to see the avatar</p>
+          </div>
+        </div>
+
+        <div class="actionRow">
+          <label>
+            Message
+            <input id="taskInput" type="text" placeholder="Type something or use Record Speech..." />
+          </label>
+          <div class="btn-group">
+            <button id="talkBtn">Talk</button>
+            <button id="recordBtn">Start Listening</button>
+          </div>
+        </div>
+
+        <p id="status"></p>
+      </div>
+
+      <!-- Right: live order -->
+      <div class="order-panel">
+        <h2>Your Order</h2>
+        <pre id="orderDisplay">No items yet</pre>
+        <button id="clearCartBtn" class="clear-btn">Clear Order</button>
+      </div>
+    </div>
+
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
